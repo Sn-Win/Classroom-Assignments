@@ -57,7 +57,32 @@ public class Student {
 		return sum / tests.length;
 	}
 	
+	public int getHighScore() {
+		int highScore = 0;
+		for(int score : tests) {
+			highScore = Math.max(highScore, score);
+		}
+		return highScore;
+	}
 	
+	public String toString() {
+		String str = "Name: " + name + "\n";
+		for(int i = 0; i < tests.length; i++) {
+			str += "test " + i + ": " + tests[i] + "\n";
+			str += "Average: " + getAverage();
+		}
+		return str;
+	}
 	
+	public String validateData() {
+		if(name.equals("")) return "SORRYL name required";
+		for(int score : tests) {
+			if(score < 0 || score > 100) {
+				String str = "SORRY: must have " + 0 + " <= test score <= " + 100;
+				return str;
+			}
+		}
+		return null;
+	}
 	
 }
