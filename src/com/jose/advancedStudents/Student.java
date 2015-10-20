@@ -69,8 +69,8 @@ public class Student {
 		String str = "Name: " + name + "\n";
 		for(int i = 0; i < tests.length; i++) {
 			str += "test " + i + ": " + tests[i] + "\n";
-			str += "Average: " + getAverage();
 		}
+		str += "Average: " + getAverage();
 		return str;
 	}
 	
